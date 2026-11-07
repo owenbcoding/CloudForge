@@ -1,0 +1,8 @@
+{
+  "name": "cloudforge",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter cloudforge-landing dev",
+    "build": "pnpm --filter cloudforge-landing build"
+  }
+}
