@@ -22,6 +22,22 @@ The application will feature a frontend hosted in an Amazon S3 bucket and a back
 
 The primary objective is to gain practical experience in cloud infrastructure, application deployment, server configuration, and full-stack development.
 
+## Local Development
+
+The CloudForge landing page is in `cloudforge-landing/` and runs with Next.js.
+From the repository root, install dependencies and start the development server:
+
+```sh
+pnpm install
+pnpm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the landing page.
+The existing Vite frontend and Express backend remain separate applications;
+they are not started by this landing-page command.
+
+See [TODO.md](./TODO.md) for the project task list.
+
 ## 2. Project Objectives
 
 - Build a responsive and modern frontend.
@@ -137,22 +153,27 @@ The project will be considered complete when:
 # repository structure
 
 ```
-    cloudforge/
-    ├── frontend/
-    │   ├── src/
-    │   ├── public/
-    │   └── package.json
-    ├── backend/
-    │   ├── src/
-    │   │   ├── routes/
-    │   │   ├── controllers/
-    │   │   └── middleware/
-    │   └── package.json
-    ├── infrastructure/
-    │   ├── nginx/
-    │   └── terraform/       # Future
-    ├── docs/
-    │   └── architecture.md
-    ├── .gitignore
-    └── README.md
+cloudforge/
+├── cloudforge-landing/       # Next.js landing page
+│   ├── app/
+│   │   ├── AGENTS.md
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── cloudforge.css
+│   ├── public/
+│   ├── next-env.d.ts
+│   ├── package.json
+│   └── tsconfig.json
+├── frontend/                 # Existing Vite frontend
+│   ├── src/
+│   └── package.json
+├── backend/                  # Existing Express API
+│   ├── server.js
+│   └── package.json
+├── package.json              # Root development scripts
+├── pnpm-workspace.yaml
+├── pnpm-lock.yaml
+├── .gitignore
+├── TODO.md
+└── README.md
 ```
